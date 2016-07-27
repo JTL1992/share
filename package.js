@@ -1,7 +1,7 @@
 Package.describe({
   summary: 'A meteor package that makes social sharing easy',
   git: 'https://github.com/JTL1992/share',
-  version: '0.0.1',
+  version: '0.2.3',
   name: "alizbeo:share"
 });
 

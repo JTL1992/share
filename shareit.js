@@ -80,14 +80,15 @@ ShareIt.init = function(hash) {
   $('<div id="fb-root"></div>').appendTo('body');
   if (ShareIt.settings.autoInit) {
     window.fbAsyncInit = function() {
-      return FB.init({appId: ShareIt.settings.sites.facebook.appId,xfbml: true,version: 'v2.5'});
+      console.log('facebook init');
+      return FB.init({appId: ShareIt.settings.sites.facebook.appId,xfbml: true,version: 'v2.7'});
     };
   }
   return (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
+     js.src = "//connect.facebook.net/en_US/all.js"
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 };
@@ -104,7 +105,7 @@ ShareIt.facebookMeta = function(description, url, title, img) {
   }).appendTo('head');
   $('<meta>', {
     property: 'og:url',
-    content: url
+    content: "http://teachxmundus.com"
   }).appendTo('head');
   $('<meta>', {
     property: 'og:title',

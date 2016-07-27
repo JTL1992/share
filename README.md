@@ -6,11 +6,10 @@ I've built social sharing buttons a few times and decided it was time to extract
 * Support social sharing buttons with bootstrap-3 (default) and font-awesome
 * Expand to support other social platforms besides just twitter & facebook, in a configurable way
 
-See also our [project home](http://meteorjs.club/shareit/) (WIP).
 
 ## Quick Start
 
-    meteor add joshowens:shareit
+    meteor add alizbeo:share
 
 ## Usage
 

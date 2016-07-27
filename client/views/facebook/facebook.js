@@ -3,6 +3,7 @@ Template.shareit_facebook.onRendered(function() {
     return;
   }
   this.autorun(function() {
+  	ShareIt.init();
     var base, data, description, href, ref, summary, img, template, title, url;
     template = Template.instance();
     data = Template.currentData();
@@ -28,6 +29,7 @@ Template.shareit_facebook.onRendered(function() {
         img = location.origin + img;
       }
     }
+    console.log("title:"+title+" url:"+url+" description"+description+" image"+img);
     ShareIt.facebookMeta(description, url, title, img);
     appId = ShareIt.settings.sites.facebook.appId;
     if (ShareIt.settings.sites.facebook.popup != null) {
@@ -35,13 +37,13 @@ Template.shareit_facebook.onRendered(function() {
         e.preventDefault();
         return FB.ui({
           method: 'share',
-          href: url
+          href: 'http://teachxmundus.com',
           // display: 'popup',
           // app_id: appId,
           // link: url,
-          // name: title,
-          // description: summary,
-          // picture: img,
+          title: title,
+          description: description,
+          picture: img
           // redirect_uri: url
         }, function(response) {});
       });
